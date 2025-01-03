@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+	<link href="https://fonts.cdnfonts.com/css/wix-madefor-display" rel="stylesheet">
+</head>
+	<body>
+		<form>
+			<fieldset class="inputs">
+				<input aria-label="Previos action of calculation" type="text" readonly="readonly" class="history-inp">
+				<input aria-label="Current operand or result of calculation" type="text" readonly="readonly" class="action-inp" value="0">
+				<!-- <span class="tooltip">Copied to clipboard</span> -->
+			</fieldset>
+			<fieldset class="buttons">
+				<button data-type="clean" value="Delete">C</button>
+				<button data-type="clean-entry">CE</button>
+				<button data-type="backspace" value="Backspace">&#10229;</button>
+				<button data-type="percent">%</button>
+	
+				<button data-type="num-action" value="1/x">&#8543;<em>x</em></button>
+				<button data-type="num-action" value="square">x&#178;</button>
+				<button data-type="num-action" value="root">&#8730;</button>
+				<button data-type="operation" value="/">÷</button>
+	
+				<button data-type="number" value="7">7</button>
+				<button data-type="number" value="8">8</button>
+				<button data-type="number" value="9">9</button>
+				<button data-type="operation" value="*">&#215;</button>
+	
+				<button data-type="number" value="4">4</button>
+				<button data-type="number" value="5">5</button>
+				<button data-type="number" value="6">6</button>
+				<button data-type="operation" value="-">-</button>
+	
+				<button data-type="number" value="1">1</button>
+				<button data-type="number" value="2">2</button>
+				<button data-type="number" value="3">3</button>
+				<button data-type="operation" value="+">+</button>
+	
+				<button data-type="negate">±</button>
+				<button data-type="number" value="0">0</button>
+				<button data-type="number" value=".">.</button>
+				<button class="equal" data-type="result" value="=">=</button>
+			</fieldset>
+		</form>
+
+		<script src="./main.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+fieldset {
+    width: 100%;
+    border: none;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(195, 195, 195, 0.8);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.inputs input {
+    background-color: transparent;
+    height: 5rem;
+    height: 6rem;
+    width: 100%;
+    text-align: end;
+    border: none;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: rgb(25, 48, 54);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.3rem;
+    row-gap: 0.3rem;
+}
+
+button {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(195, 195, 195, 0.8);
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgba(97, 63, 110, 0.299);
+    position: relative;
+	font-family: 'Wix Madefor Display', sans-serif;
+	color: rgb(0, 0, 0);
+}
+
+button.equal {
+    background-color: rgb(25, 48, 54);
+    color: rgb(255, 255, 255);
+}
+
+button[data-type="number"]:not(button[value="."]) {
+    background-color: rgb(255, 255, 255);
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(225, 225, 225, 0.3);
+    opacity: 0;
+}
+
+button::after {
+    content: "";
+    padding-top: 60%;
+    float: left;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+button[data-type="num-action"] {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pressed {
+    box-shadow: inset 6px 8px 6px -6px rgb(243, 243, 243);
+    border: 1px solid rgb(255, 255, 255);
+    /* text-shadow: 4px 4px rgb(211, 211, 211); */
+}
+
+.pressed::before {
+    opacity: 0;
+}
+
+.inputs {
+    position: relative;
+}
+
+/* .inputs .tooltip {
+    visibility: hidden;
+    background-color: rgb(85, 85, 85);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 1.2rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inputs .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(85, 85, 85) transparent transparent transparent;
+}
+
+.inputs:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+} */
+
+/* CSS Responsive (min-width: 425px) */
+@media screen and (min-width: 425px) {
+    form {
+        width: 425px;
+        padding: 0.3rem;
+    }
+
+    .history-inp {
+        font-size: 2rem;
+        color: rgb(128, 128, 128);
+    }
+
+    .action-inp {
+        font-size: 4.6rem;
+    }
+
+    .small .action-inp {
+        font-size: 3.8rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+}
+
+/* CSS Responsive max-width: 424px */
+@media screen and (max-width: 424px) {
+    form {
+        width: 100vw;
+        padding: 0 2vw 0 1vw;
+    }
+
+    .history-inp {
+        font-size: 8vw;
+        color: rgb(128, 128, 128);
+    }
+
+    .action-inp {
+        font-size: 15vw;
+    }
+
+    .small .action-inp {
+        font-size: 14.2vw;
+    }
+
+    button {
+        font-size: 8vw;
+    }
+}
